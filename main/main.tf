@@ -1,12 +1,8 @@
 provider "azurerm"{
-    features{}
+    features {}
 }
-resource "azurerm_resource_group" "rg" {
-    name = "siva-rg"
-    location = "uksouth"
-    tags = {
-        environment = "dev"
-        source = "terraform"
-        purpose = "testing"
-    }
+resource "azurerm_resource_group" "resource_group" {
+    name     = local.rg_name
+    location = var.location
+    tags     = var.tags 
 }
